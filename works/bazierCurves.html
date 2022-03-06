@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bazeierCurves2</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+        var width = canvas.width = window.innerWidth;
+        var height = canvas.height = window.innerHeight;
+
+        var curves = [];
+        var numOfCurves = Math.random() * 25;
+
+        function point(a,b){
+            var x, y;
+            this.x = a,
+            this.y = b;
+        }
+        function curve(points){
+            var points, color;
+            this.points = points;
+            this.color = this.color = `rgb(
+                ${Math.floor(Math.random()*255)},
+                ${Math.floor(Math.random()*255)},
+                0)`;
+        }
+
+        for(var i = 0; i < numOfCurves; i++){
+            var points = [];
+            for(var j = 0; j < 4; j++){
+                points.push(new point(Math.random() * width, Math.random() * height));
+            }
+            curves.push(new curve(points));
+        }
+        
+        var t = 0, direction = Math.random()/100;
+        var finalPos = {};
+        render();
+
+        function render(){
+            ctx.clearRect(0,0,width,height);
+            for(var i = 0; i < numOfCurves; i++){
+                ctx.beginPath();
+                var c = curves[i];
+                var p = c.points;                
+                ctx.moveTo(p[0].x,p[0].y);
+                ctx.bezierCurveTo(p[1].x, p[1].y, p[2].x, p[2].y, p[3].x,p[3].y);
+                ctx.strokeStyle = c.color;
+                ctx.stroke();
+            }
+             
+            for(var i = 0; i < numOfCurves; i++){
+                var c  = curves[i];
+                var p2 = c.points;
+                
+                cubicBezier(p2[0], p2[1], p2[2], p2[3], t, finalPos);
+                ctx.beginPath();
+                ctx.arc(finalPos.x,finalPos.y,10,0,Math.PI*2,false);
+                ctx.fillStyle = c.color;
+                ctx.fill();                                
+            }
+            
+            t += direction;
+            if(t > 1 || t < 0){
+                direction *= -1;
+            }
+            
+            requestAnimationFrame(render);
+        }
+
+        function cubicBezier(p0,p1,p2,p3,t,finalPos){
+            finalPos.x = Math.pow(1 - t, 3) * p0.x + 
+				   Math.pow(1 - t, 2) * 3 * t * p1.x + 
+				   (1 - t) * 3 * t * t * p2.x + 
+				   t * t * t * p3.x;
+            finalPos.y = Math.pow(1 - t, 3) * p0.y + 
+				   Math.pow(1 - t, 2) * 3 * t * p1.y + 
+				   (1 - t) * 3 * t * t * p2.y + 
+				   t * t * t * p3.y;
+		    return finalPos;
+        }
+    </script>
+</body>
+</html>
