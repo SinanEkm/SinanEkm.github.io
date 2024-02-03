@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/1382658fb8.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src=" https://kit.fontawesome.com/1382658fb8.js" crossorigin="anonymous">
+  </script>
 
   <title>sinan ekmekcibasi</title>
   <!-- Google tag (gtag.js) -->
@@ -20,16 +21,14 @@
     html {
       margin: 0px;
       padding: 0px;
+      text-align: center;
     }
 
     body {
       margin: 0px;
       padding: 0px;
-      /* margin-left: 30vh; */
-      /* margin-right: 30vh; */
-      /* margin-top: 0; */
-      /* margin-bottom: 0; */
       font-family: 'Montserrat' sans-serif;
+      zoom: 1;
     }
 
     a {
@@ -39,10 +38,11 @@
 
     #container {
       display: flex;
-      height: 70vh;
+      max-width: 840px;
       border-left: solid #ccc 1px;
       border-right: solid #ccc 1px;
       border-bottom: solid #ccc 1px;
+      margin: 0 auto;
     }
 
     #sidebar {
@@ -129,7 +129,7 @@
       float: right;
       text-align: left;
       margin-top: 3px;
-      font-size: 20px;
+      font-size: 17px;
     }
 
     .project-container div a {
@@ -141,29 +141,28 @@
 </head>
 
 <body>
-  <center>
-    <div id="container">
-      <div id="sidebar">
-        <h2>sinan ekmekcibasi</h2>
+  <div id="container">
+    <div id="sidebar">
+      <h2>sinan ekmekcibasi</h2>
 
-        <img id="profile-photo" src="img/pp.jpeg" alt="Profile Photo">
+      <img id="profile-photo" src="img/pp.jpeg" alt="Profile Photo">
 
-        <p id="bio">Master's student @ Koc University and a member of <a
-            href="https://parcorelab.ku.edu.tr/">ParCoreLab</a>. Working on parallel computing and HPC.
-          Interested in system-level
-          problems.</p>
-        -------
-        <div id="social-links">
-          <a href="https://github.com/SinanEkm" target="_blank"><i class="fab fa-github"></i>Github</a>
-          <a href="https://www.linkedin.com/in/sinan_ekmekcibasi" target="_blank"><i
-              class="fab fa-linkedin"></i>LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=HR7EluYAAAAJ" target="_blank"><i
-              class="fa-brands fa-google-scholar"></i>Scholar</a>
-        </div>
+      <p id="bio">Master's student @ Koc University and a member of <a
+          href="https://parcorelab.ku.edu.tr/">ParCoreLab</a>. Working on parallel computing and HPC.
+        Interested in system-level
+        problems.</p>
+      -------
+      <div id="social-links">
+        <a href="https://github.com/SinanEkm" target="_blank"><i class="fab fa-github"></i>Github</a>
+        <a href="https://www.linkedin.com/in/sinan_ekmekcibasi" target="_blank"><i
+            class="fab fa-linkedin"></i>LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=HR7EluYAAAAJ" target="_blank"><i
+            class="fa-brands fa-google-scholar"></i>Scholar</a>
       </div>
+    </div>
 
-      <div id="main-container">
-        <!-- News Section
+    <div id="main-container">
+      <!-- News Section
         <div class="section">
           <h2>News</h2>
           <div class="news-item">
@@ -171,22 +170,21 @@
           </div>
         </div> -->
 
-        <div class="section">
-          <h2>Projects</h2>
-          <div class="project-item">
-            <div class="project-container">
-              <a href="https://github.com/sparcityeu/sparsebase/"><img src="img/sparcity_logo-1.png"></img></a>
-              <div>
-                <a href="https://github.com/sparcityeu/sparsebase/">SparseBase</a><br>
-                <span>SparseBase is a C++ HPC library for handling <b>sparse</b> data structures and operations.</span>
-              </div>
+      <div class="section">
+        <h2>Projects</h2>
+        <div class="project-item">
+          <div class="project-container">
+            <a href="https://github.com/sparcityeu/sparsebase/"><img src="img/sparcity_logo-1.png"></img></a>
+            <div>
+              <a href="https://github.com/sparcityeu/sparsebase/">SparseBase</a><br>
+              <span>SparseBase is a C++ HPC library for handling <b>sparse</b> data structures and operations.</span>
             </div>
-            <p></p>
-            <a href="./works/works.html">some useless <b>draft</b> projects</a>
           </div>
+          <p></p>
+          <a href="./works/works.html">some useless <b>draft</b> projects</a>
         </div>
       </div>
-  </center>
+    </div>
 </body>
 
 </html>
