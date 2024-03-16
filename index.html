@@ -137,6 +137,20 @@
       font-weight: bold;
       font-size: 20px;
     }
+
+    #easter-egg {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    }
   </style>
 </head>
 
@@ -184,7 +198,26 @@
           <a href="./works/works.html">some useless <b>draft</b> projects</a>
         </div>
       </div>
+      <div id="easter-egg">
+          <h2>Hello random stalker!!</h2>
+          <p>You're qualified to being redirected to my boring spotify profile!! Enjoy!</p>
+
+      </div>
     </div>
 </body>
+<script>
+    
+    function showEasterEgg(){
+        var easterEgg = document.getElementById("easter-egg");
+        easterEgg.style.display = "block";
+    }
 
+    setTimeout(function(){
+        showEasterEgg();
+        setTimeout(function(){
+            window.location.href = "https://open.spotify.com/user/sekmekci?si=51954dd13b894efd";
+        },10*1000);
+            },
+    2*60*1000);
+</script>
 </html>
