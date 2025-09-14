@@ -18,6 +18,44 @@
     gtag('config', 'G-H9WLH91M3Y');
   </script>
   <style>
+    /* Modern, clean Recent News styles */
+    .recent-news-section {
+      background: #f9fafb;
+      border-left: 4px solid #4f8cff;
+      border-radius: 8px;
+      padding: 18px 22px 12px 22px;
+      margin-top: 32px;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .recent-news-section h2 {
+      margin-top: 0;
+      color: #2a3a4b;
+      font-size: 1.3em;
+      letter-spacing: 0.5px;
+    }
+
+    .news-list {
+      list-style: disc inside;
+      padding-left: 0.5em;
+      margin: 0;
+    }
+
+    .news-item {
+      margin-bottom: 10px;
+      font-size: 1.04em;
+      color: #222;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      display: list-item;
+    }
+
     html {
       margin: 0px;
       padding: 0px;
@@ -110,7 +148,7 @@
       display: flex;
       border: solid rgba(100, 100, 100, .3) 1px;
       width: 550px;
-      height: 120px;
+      /* height: 120px; */
       padding: 10px;
       margin: 10px;
     }
@@ -139,17 +177,17 @@
     }
 
     #easter-egg {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
     }
   </style>
 </head>
@@ -157,7 +195,7 @@
 <body>
   <div id="container">
     <div id="sidebar">
-      <h2>sinan ekmekcibasi</h2>
+      <h3>sinan ekmekcibasi</h3>
 
       <img id="profile-photo" src="img/pp.jpeg" alt="Profile Photo">
 
@@ -189,44 +227,57 @@
         <h2>Projects</h2>
         <div class="project-item">
           <div class="project-container">
+            <a href="https://www.inno4scale.eu/acg/"><img src="img/XfavtVK6_400x400.jpg"></img></a>
+            <div>
+              <a href="https://www.github.com/ParCoreLab/aCG">aCG (Adaptive Conjugate Gradient)</a><br>
+              <span>We implemented several CPU- and GPU-initiated communication strategies for Conjugate Gradient
+                Methods.
+                This work presents scalable CG and PCG solvers targeting both NVIDIA and AMD GPUs, using GPU-aware MPI,
+                NCCL/RCCL and NVSHMEM libraries.</span>
+            </div>
+          </div>
+          <div class="project-container">
             <a href="https://github.com/sparcityeu/sparsebase/"><img src="img/sparcity_logo-1.png"></img></a>
             <div>
               <a href="https://github.com/sparcityeu/sparsebase/">SparseBase</a><br>
               <span>SparseBase is a C++ HPC library for handling <b>sparse</b> data structures and operations.</span>
             </div>
           </div>
-          <div class="project-container">
-            <a href="https://www.inno4scale.eu/acg/"><img src="img/XfavtVK6_400x400.jpg"></img></a>
-            <div>
-              <a href="https://www.github.com/ParCoreLab/aCG">aCG (Adaptive Conjugate Gradient)</a><br>
-              <span>aCG uses performance modelling to dynamically switch between CG variants based on sparse matrix characteristics and hardware specifications to ensure optimal performance.</span>
-            </div>
-          </div>
-
           <p></p>
-          <a href="./works/works.html">some useless <b>draft</b> projects</a>
+          <!-- <a href="./works/works.html">some useless <b>draft</b> projects</a> -->
         </div>
       </div>
+
+      <div class="recent-news-section">
+        <h2>Recent News</h2>
+        <ul class="news-list">
+          <li class="news-item"><strong>(August 25')</strong> After years of pressure from friends and society, I
+            finally watched Breaking Bad.</li>
+          <li class="news-item"><strong>(September 25')</strong> Dogan's work has been published at IEEE CLUSTER 25'. I
+            helped with the implementation of one of the experiments.</li>
+        </ul>
+      </div>
       <div id="easter-egg">
-          <h2>Hello random stalker!!</h2>
-          <p>You're qualified to being redirected to my boring spotify profile!! Enjoy!</p>
+        <h2>Hello random stalker!!</h2>
+        <p>You're qualified to being redirected to my boring spotify profile!! Enjoy!</p>
 
       </div>
     </div>
 </body>
-<script>
-    
-    function showEasterEgg(){
-        var easterEgg = document.getElementById("easter-egg");
-        easterEgg.style.display = "block";
-    }
+<!-- <script>
 
-    setTimeout(function(){
-        showEasterEgg();
-        setTimeout(function(){
-            window.location.href = "https://open.spotify.com/user/sekmekci?si=51954dd13b894efd";
-        },10*1000);
-            },
-    5*60*1000);
-</script>
+  function showEasterEgg() {
+    var easterEgg = document.getElementById("easter-egg");
+    easterEgg.style.display = "block";
+  }
+
+  setTimeout(function () {
+    showEasterEgg();
+    setTimeout(function () {
+      window.location.href = "https://open.spotify.com/user/sekmekci?si=51954dd13b894efd";
+    }, 10 * 1000);
+  },
+    30 * 1000);
+</script> -->
+
 </html>
