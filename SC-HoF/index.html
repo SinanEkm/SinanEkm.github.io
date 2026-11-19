@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SC Hall of Fame</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>SC Hall of Fame</h1>
+  <p class="sub">Authors ranked by number of papers at the Supercomputing (SC) main conference, per DBLP.</p>
+  <p class="meta" id="meta"></p>
+</header>
+<main>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search author name...">
+    <label>Min papers: <input id="minPapers" type="number" min="1" value="1" style="width:5em"></label>
+  </div>
+  <table id="authors">
+    <thead>
+      <tr>
+        <th data-key="rank">#</th>
+        <th data-key="name">Author</th>
+        <th data-key="papers" class="sortable active desc">Papers</th>
+        <th data-key="first_year" class="sortable">First</th>
+        <th data-key="last_year" class="sortable">Last</th>
+        <th data-key="years_active" class="sortable">Years active</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</main>
+<footer>
+  Data: <a href="https://dblp.org/db/conf/sc/">DBLP</a>. Source: <a href="https://github.com/">GitHub</a>.
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
